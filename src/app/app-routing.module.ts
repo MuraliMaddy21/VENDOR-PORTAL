@@ -13,34 +13,34 @@ import { QuotationComponent } from './quotation/quotation.component';
 
 const routes: Routes = [
   {
-    path:'',component:LoginComponent
+    path:'',component:LoginComponent,title:'Login'
   },
   {
-    path:'dashboard',component:DashboardComponent
+    path:'dashboard',component:DashboardComponent,title:'Dashboard'
   },
   {
-    path:'invoice',component:InvoiceComponent
+    path:'invoice',component:InvoiceComponent,title:'Invoice'
   },
   {
-    path:'credit',component:CreditDebitComponent
+    path:'credit',component:CreditDebitComponent,title:'Credit'
   },
   {
-    path:'purord',component:PurordComponent
+    path:'purord',component:PurordComponent,title:'Purchase-Order'
   },
   {
-    path:'quotation',component:QuotationComponent
+    path:'quotation',component:QuotationComponent,title:'Quotation'
   },
   {
-    path:'pa',component:PayageComponent
+    path:'pa',component:PayageComponent,title:'Payment-Aging'
   },
   {
-    path:'debit',component:DebitComponent
+    path:'debit',component:DebitComponent,title:'Debit'
   },
   {
-    path:'gr',component:GoodreceiptComponent
+    path:'gr',component:GoodreceiptComponent,title:'Goods-Receipt'
   },
   {
-    path:'**',component:ErrorComponent
+    path:'**',component:ErrorComponent,title:'Error-Page'
   },
 
 
