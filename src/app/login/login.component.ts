@@ -11,7 +11,7 @@ import { Route, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  vendorid:any=""
+  vendorid:any="";
   password:any="";
   json:any
   result:any
@@ -27,10 +27,14 @@ export class LoginComponent implements OnInit {
 
   validate()
   {
+    
+   
    this.json={
     "vendorid":this.vendorid,
     "password":this.password
    }
+ 
+  
    console.log(this.json)
    this.http.post('http://localhost:3030/login',this.json,{responseType:'json'}).subscribe((response=>
    {
