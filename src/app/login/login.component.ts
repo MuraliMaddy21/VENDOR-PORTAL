@@ -27,12 +27,18 @@ export class LoginComponent implements OnInit {
 
   validate()
   {
-    
+
+  if(this.vendorid=='')
+  {
+    window.alert("Please enter Vendor-ID")
+  }
    
    this.json={
     "vendorid":this.vendorid,
     "password":this.password
    }
+
+   
  
   
    console.log(this.json)
