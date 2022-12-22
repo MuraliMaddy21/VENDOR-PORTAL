@@ -32,6 +32,11 @@ export class LoginComponent implements OnInit {
   {
     window.alert("Please enter Vendor-ID")
   }
+  if(this.password=='')
+  {
+    window.alert("Please enter Password")
+  }
+
    
    this.json={
     "vendorid":this.vendorid,
