@@ -26,13 +26,20 @@ export class DashboardComponent implements OnInit {
     {
       console.log(response)
       this.result = response
-      this.name = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].NAME
       this.vendorid = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].VENDOR
+      if(this.vendorid=="")
+      {
+        window.alert("Looks Like You haven't Logged in!Redirecting to login page")
+        this.route.navigate([""]);
+      }
+      else{
+      this.name = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].NAME
       this.street = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].STREET
       this.country = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].COUNTRY
       this.state = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].STATE
       this.telenum = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].TELENUM
       this.city = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].CITY
+      }
   });
   }
 }

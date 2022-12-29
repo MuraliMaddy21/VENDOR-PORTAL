@@ -11,6 +11,7 @@ export class DebitComponent implements OnInit {
 
   items:any
   result:any
+  vendorid:any="";
 
   constructor(private route:Router,private http:HttpClient) { }
 
