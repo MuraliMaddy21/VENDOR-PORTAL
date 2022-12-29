@@ -66,23 +66,35 @@
                     <table>
                         <th>MATERIAL DOCUMENT</th>
                         <th>DOCUMENT DATE</th>
-                        <th>MATERIAL </th>
                         <th>FISCAL YEAR </th>
-                        <th>LINE ITEM </th>
-                        <th>AMOUNT </th>
-                        <th>ACCOUNT TYPE </th>
+                        <th>ORDER UNITS</th>
+                        <th>ORDER QUANTITY </th>
+                        <th>PO NUMBER </th>
+                        <th>CURRENCY </th>
 
-                    <tr style="height:200px" *ngFor="let entries of this.items" >
+                        <ng-container *ngFor="let entries1 of giitems">
+                        <tr *ngFor="let entries of items; let i=index">
+                            
+                                
+                    <td><h4>{{entries.MAT_DOC}}</h4></td>
+                    <td><h4>{{entries.DOC_DATE}}</h4></td>
+                    <td><h4>{{entries.DOC_YEAR}}</h4></td>
+                    <td><h4>{{entries1.ORDERPR_UN}}</h4></td>
+                    <td><h4>{{entries1.ENTRY_QNT}}</h4></td>
+                    <td><h4>{{entries1.PO_NUMBER}}</h4></td>
+                    <td><h4>{{entries1.CURRENCY}}</h4></td>
+                </tr>
+                            </ng-container>
+                          
+                      
                         
-                        <td><h4>{{entries.MAT_DOC}}</h4></td>
-                        <td><h4>{{entries.DOC_DATE}}</h4></td>
-                    </tr>  
-                     
-
+                  
+                   
                     </table>
                     
                     
                     
+                  
                 
                         
                  
