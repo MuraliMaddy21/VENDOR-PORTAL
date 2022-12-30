@@ -18,9 +18,14 @@ export class DashboardComponent implements OnInit {
   country:any=""
   telenum:any=""
   result:any
+  time:any;
   constructor(private route:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
+
+    let date:Date= new Date()
+    this.time=date;
+
  
     this.http.get("http://localhost:3030/profile",{responseType:'json'}).subscribe((response)=>
     {

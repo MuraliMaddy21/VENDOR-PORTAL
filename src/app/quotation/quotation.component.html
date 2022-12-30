@@ -55,6 +55,9 @@
             <div class='dashboard'>
                 <H2 align="center">VENDOR PORTAL-QUOTATION</H2>
 
+                <div class="time">
+                    TIME:{{time}}
+                </div>
                
 
               
@@ -66,13 +69,16 @@
                     <table>
                         <th>DOCUMENT DATE</th>
                         <th>PO_NUMBER</th>
+                        <th>CREATED ON</th>
                         <th>QUOT_DEADLINE </th>
-                        
+                        <th>CURRENCY</th>
 
                     <tr style="height:10px" *ngFor="let entries of this.items">
                         <td><h4>{{entries.DOC_DATE}}</h4></td>
                         <td><h4>{{entries.PO_NUMBER}}</h4></td>
+                        <td><h4>{{entries.CREATED_ON}}</h4></td>
                         <td><h4>{{entries.QUOT_DEAD}}</h4></td>
+                        <td><h4>{{entries.CURRENCY}}</h4></td>
                         
                         
                 </table>
