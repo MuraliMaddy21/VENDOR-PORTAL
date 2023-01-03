@@ -13,10 +13,10 @@ export class LoginComponent implements OnInit {
 
   vendorid:any="";
   password:any="";
-  json:any
-  result:any
-  status:any
-  x:any;
+  json:any=""
+  result:any=""
+  status:any=""
+  x:any="";
  
 
 
@@ -29,15 +29,20 @@ export class LoginComponent implements OnInit {
   validate()
   {
 
-  if(this.vendorid=='')
+  if(this.vendorid=='' && this.password=='')
+  {
+   window.alert("Please enter password and Vendor-ID");
+  }
+  else if(this.vendorid=='')
   {
     window.alert("Please enter Vendor-ID")
   }
-  if(this.password=='')
+  else if(this.password=='')
   {
     window.alert("Please enter Password")
   }
-
+  else
+  {
    
    this.json={
     "vendorid":this.vendorid,
@@ -65,6 +70,7 @@ export class LoginComponent implements OnInit {
       }
 
    }))
+  }
    
 
   }
