@@ -68,17 +68,18 @@
                     
                     <table>
                         <th>DOCUMENT DATE</th>
-                        <th>PO_NUMBER</th>
-                        <th>CREATED ON</th>
+                        <th>COMPANY CODE</th>
                         <th>QUOT_DEADLINE </th>
                         <th>CURRENCY</th>
+                        <th>STATUS</th>
+
 
                     <tr style="height:10px" *ngFor="let entries of this.items">
                         <td><h4>{{entries.DOC_DATE}}</h4></td>
-                        <td><h4>{{entries.PO_NUMBER}}</h4></td>
-                        <td><h4>{{entries.CREATED_ON}}</h4></td>
+                        <td><h4>{{entries.CO_CODE}}</h4></td>
                         <td><h4>{{entries.QUOT_DEAD}}</h4></td>
                         <td><h4>{{entries.CURRENCY}}</h4></td>
+                        <td><h4>{{entries.STATUS}}</h4></td>
                         
                         
                 </table>
