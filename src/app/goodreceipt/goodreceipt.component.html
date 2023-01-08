@@ -59,7 +59,11 @@
                 <div class="time">
                     TIME:{{time}}
                 </div>
+                <div class="shutdown">
+                    <button class="log"  (click)="shutdown()">LOGOUT👋</button>
+                </div>
                
+
               
 
                 <div class='rightbar'>
@@ -83,7 +87,7 @@
                     <td><h4>{{entries.DOC_DATE| date: 'dd/MM/yyyy'}}</h4></td>
                     <td><h4>{{entries.DOC_YEAR}}</h4></td>
                     <td><h4>{{entries1.ORDERPR_UN}}</h4></td>
-                    <td><h4>{{entries1.ENTRY_QNT}}</h4></td>
+                    <td><h4>{{entries1.ENTRY_QNT| number}}</h4></td>
                     <td><h4>{{entries1.PO_NUMBER}}</h4></td>
                     <td><h4>{{entries1.CURRENCY}}</h4></td>
                 </tr>

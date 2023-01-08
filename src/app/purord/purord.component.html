@@ -60,6 +60,10 @@
                     TIME:{{time}}
                 </div>
                
+                <div class="shutdown">
+                    <button class="log"  (click)="shutdown()">LOGOUT👋</button>
+                </div>
+               
               
 
                 <div class='rightbar'>
@@ -78,13 +82,13 @@
 
                     <tr style="height:200px" *ngFor="let entries of this.items">
                         <td><h4>{{entries.PO_NUMBER}}</h4></td>
-                        <td><h4>{{entries.PO_ITEM}}</h4></td>
+                        <td><h4>{{entries.PO_ITEM| number}}</h4></td>
                         <td><h4>{{entries.CHANGED_ON | date: 'dd/MM/yyyy'}}</h4></td>
                         <td><h4>{{entries.SHORT_TEXT}}</h4></td>
                         <td><h4>{{entries.ORDERPR_UN}}</h4></td>
-                        <td><h4>{{entries.PRICE_DATE}}</h4></td>
-                        <td><h4>{{entries.QUANTITY}}</h4></td>      
-                        <td><h4>{{entries.NET_PRICE}}</h4></td>
+                        <td><h4>{{entries.PRICE_DATE| date: 'dd/MM/yyyy'}}</h4></td>
+                        <td><h4>{{entries.QUANTITY| number}}</h4></td>      
+                        <td><h4>{{entries.NET_PRICE| number}}</h4></td>
                         
 
                     

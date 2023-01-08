@@ -58,6 +58,11 @@
                 <div class="time">
                     TIME:{{time}}
                 </div>
+
+                <div class="shutdown">
+                    <button class="log"  (click)="shutdown()">LOGOUT👋</button>
+                </div>
+               
                
 
               
@@ -76,12 +81,12 @@
                         <th>ACCOUNT TYPE </th>
 
                     <tr style="height:200px" *ngFor="let entries of this.items">
-                        
+
                         <td><h4>{{entries.MANDT}}</h4></td>
                         <td><h4>{{entries.BELNR}}</h4></td>
-                        <td><h4>{{entries.BUKRS}}</h4></td>
+                        <td><h4>{{entries.BUKRS| number}}</h4></td>
                         <td><h4>{{entries.GJAHR}}</h4></td>
-                        <td><h4>{{entries.BUZEI}}</h4></td>
+                        <td><h4>{{entries.BUZEI| number}}</h4></td>
                         <td><h4>{{entries.WRBTR}}</h4></td>
                         <td><h4>{{entries.KOART}}</h4></td>
                     </tr>
