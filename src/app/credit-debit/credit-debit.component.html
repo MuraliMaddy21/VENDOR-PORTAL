@@ -69,6 +69,7 @@
                     <table>
                         <th>DOCUMENT NUMBER</th>
                         <th>FISCAL YEAR</th>
+                        <th>PURCHASING DOCUMENT</th>
                         <th>AMOUNT</th>
                         <th>CLEARING DATE</th>
                         <th>DEBIT/CREDIT</th>
@@ -78,6 +79,7 @@
                     <tr style="height:10px" *ngFor="let entries of this.items">
                         <td><h4>{{entries.BELNR}}</h4></td>
                         <td><h4>{{entries.GJAHR}}</h4></td>
+                        <td><h4>{{entries.EBELN}}</h4></td>
                         <td><h4>{{entries.WRBTR}}</h4></td>
                         <td><h4>{{entries.AUGCP}}</h4></td>
                         <td><h4>{{entries.SHKZG}}</h4></td>

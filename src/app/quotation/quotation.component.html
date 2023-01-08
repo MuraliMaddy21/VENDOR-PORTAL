@@ -75,7 +75,7 @@
 
 
                     <tr style="height:10px" *ngFor="let entries of this.items">
-                        <td><h4>{{entries.DOC_DATE}}</h4></td>
+                        <td><h4>{{entries.DOC_DATE| date: 'dd/MM/yyyy'}}</h4></td>
                         <td><h4>{{entries.CO_CODE}}</h4></td>
                         <td><h4>{{entries.QUOT_DEAD}}</h4></td>
                         <td><h4>{{entries.CURRENCY}}</h4></td>

@@ -12,6 +12,7 @@ export class InvoiceComponent implements OnInit {
   result:any;
   items:any;
   time:any;
+  bukrs:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -37,8 +38,7 @@ export class InvoiceComponent implements OnInit {
       this.result = data
       console.log(this.result)
       this.items=this.result['Envelope']['Body']['ZFM_INVOICE_VP_MD.Response']['E_INV_ITEM']['item']
-      console.log(this.items)
-
+      console.log(this.items);
     })
   }
 
