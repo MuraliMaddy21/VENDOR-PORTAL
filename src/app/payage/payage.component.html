@@ -70,7 +70,12 @@
                 <div class='rightbar'>
                     <br>
                     <br>
+
                     
+                    
+                    <input type="text" class="form-control" placeholder="Filter by Document Number" [(ngModel)]="filterdata" />
+                    <br>
+                    <br>
                     <table>
                         <th>DOCUMENT NUMBER</th>
                         <th>AMOUNT IN LC</th>
@@ -80,7 +85,7 @@
                         <th>AGING</th>
                         
 
-                    <tr style="height:10px" *ngFor="let entries of this.items">
+                    <tr style="height:10px" *ngFor="let entries of this.items | filterpipe:filterdata">
                         <td><h4>{{entries.BELNR}}</h4></td>
                         <td><h4>{{entries.DMBTR}}</h4></td>
                         <td><h4>{{entries.WRBTR}}</h4></td>

@@ -13,6 +13,7 @@ export class QuotationComponent implements OnInit {
   items:any;
   result:any;
   time:any;
+  filterdata:any="";
 
   constructor(private route:Router,private http:HttpClient) { }
 

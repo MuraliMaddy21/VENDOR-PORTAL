@@ -12,6 +12,7 @@ export class PayageComponent implements OnInit {
   items:any
   result:any
   time:any;
+  filterdata:any="";
 
   constructor(private route:Router,private http:HttpClient) { }
 

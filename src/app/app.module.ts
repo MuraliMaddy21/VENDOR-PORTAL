@@ -13,6 +13,10 @@ import { QuotationComponent } from './quotation/quotation.component';
 import { GoodreceiptComponent } from './goodreceipt/goodreceipt.component';
 import { ErrorComponent } from './error/error.component';
 import { DebitComponent } from './debit/debit.component';
+import { FilterPipe } from './payage/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { Filter1Pipe } from './quotation/filter1.pipe';
+import { Filter2Pipe } from './purord/filter2.pipe';
 
 
 @NgModule({
@@ -27,12 +31,17 @@ import { DebitComponent } from './debit/debit.component';
     QuotationComponent,
     GoodreceiptComponent,
     ErrorComponent,
-    DebitComponent
+    DebitComponent,
+    FilterPipe,
+    Filter1Pipe,
+    Filter2Pipe
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

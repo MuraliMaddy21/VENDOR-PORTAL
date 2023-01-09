@@ -71,6 +71,10 @@
                     <br>
                     <br>
                     
+                    <input type="text" class="form-control" placeholder="Filter by Document Number" [(ngModel)]="filterdata" />
+                    <br>
+                    <br>
+
                     <table>
                         <th>DOCUMENT DATE</th>
                         <th>COMPANY CODE</th>
@@ -79,10 +83,10 @@
                         <th>STATUS</th>
 
 
-                    <tr style="height:10px" *ngFor="let entries of this.items">
-                        <td><h4>{{entries.DOC_DATE| date: 'dd/MM/yyyy'}}</h4></td>
-                        <td><h4>{{entries.CO_CODE| number}}</h4></td>
-                        <td><h4>{{entries.QUOT_DEAD| date: 'dd/MM/yyyy'}}</h4></td>
+                    <tr style="height:10px" *ngFor="let entries of this.items | filter1:filterdata">
+                        <td><h4>{{entries.DOC_DATE | date: 'dd/MM/yyyy'}}</h4></td>
+                        <td><h4>{{entries.CO_CODE | number}}</h4></td>
+                        <td><h4>{{entries.QUOT_DEAD | date: 'dd/MM/yyyy'}}</h4></td>
                         <td><h4>{{entries.CURRENCY}}</h4></td>
                         <td><h4>{{entries.STATUS}}</h4></td>
                         

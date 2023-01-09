@@ -12,6 +12,7 @@ export class PurordComponent implements OnInit {
  items:any
  result:any
  time:any;
+ filterdata:any="";
 
   constructor(private http:HttpClient,private route:Router) { }
 

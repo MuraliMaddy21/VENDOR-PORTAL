@@ -69,10 +69,13 @@
                 <div class='rightbar'>
                     <br>
                     <br>
-                    
+
+                    <input type="text" class="form-control" placeholder="Filter by Purchase Order Number" [(ngModel)]="filterdata" />
+                    <br>
+                        <br>
                     <table>
                         <th>PO NUMBER</th>
-                        <th>PO ITEM</th>
+                        <th>PO ITEM NUMBER</th>
                         <th>CREATED DATE</th>
                         <th>DESCRIPTION </th>
                         <th>ORDER UNIT </th>
@@ -80,7 +83,7 @@
                         <th>QUANTITY </th>
                         <th>NET PRICE </th>
 
-                    <tr style="height:200px" *ngFor="let entries of this.items">
+                    <tr style="height:10px" *ngFor="let entries of this.items | filter2:filterdata">
                         <td><h4>{{entries.PO_NUMBER}}</h4></td>
                         <td><h4>{{entries.PO_ITEM| number}}</h4></td>
                         <td><h4>{{entries.CHANGED_ON | date: 'dd/MM/yyyy'}}</h4></td>
