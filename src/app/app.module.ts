@@ -17,6 +17,7 @@ import { FilterPipe } from './payage/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { Filter1Pipe } from './quotation/filter1.pipe';
 import { Filter2Pipe } from './purord/filter2.pipe';
+import { Filter3Pipe } from './invoice/filter3.pipe';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { Filter2Pipe } from './purord/filter2.pipe';
     DebitComponent,
     FilterPipe,
     Filter1Pipe,
-    Filter2Pipe
+    Filter2Pipe,
+    Filter3Pipe
     
   ],
   imports: [

@@ -64,13 +64,11 @@
                 </div>
                
                
-
-              
+<br>
+                <input type="text" class="form-control" placeholder="Filter by ACCOUNT TYPE" [(ngModel)]="filterdata" />
 
                 <div class='rightbar'>
                     <br>
-                    <br>
-                    
                     <table>
                         <th>CLIENT</th>
                         <th>DOCUMENT NUMBER</th>
@@ -80,7 +78,7 @@
                         <th>AMOUNT </th>
                         <th>ACCOUNT TYPE </th>
 
-                    <tr style="height:200px" *ngFor="let entries of this.items">
+                    <tr style="height:200px" *ngFor="let entries of this.items | filter3:filterdata">
 
                         <td><h4>{{entries.MANDT}}</h4></td>
                         <td><h4>{{entries.BELNR}}</h4></td>
