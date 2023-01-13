@@ -238,6 +238,7 @@ input::placeholder{
 
 .rightbar h4{
     padding-left: 2rem;
+    margin-top: 0.01rem;
 }
 
 .rightbar h4:hover{
