@@ -64,7 +64,7 @@
                 </div>
                
 
-              
+                <input type="text" class="form-control" placeholder="Filter by Purchase Order Number" [(ngModel)]="filterdata" />
 
                 <div class='rightbar'>
                     <br>
@@ -79,7 +79,7 @@
                         <th>PO NUMBER </th>
                         <th>CURRENCY </th>
 
-                        <ng-container *ngFor="let entries1 of giitems">
+                        <ng-container *ngFor="let entries1 of giitems | filter4:filterdata">
                         <tr *ngFor="let entries of items; let i=index">
                             
                                 

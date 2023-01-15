@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { Filter1Pipe } from './quotation/filter1.pipe';
 import { Filter2Pipe } from './purord/filter2.pipe';
 import { Filter3Pipe } from './invoice/filter3.pipe';
+import { Filter4Pipe } from './goodreceipt/filter4.pipe';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { Filter3Pipe } from './invoice/filter3.pipe';
     FilterPipe,
     Filter1Pipe,
     Filter2Pipe,
-    Filter3Pipe
+    Filter3Pipe,
+    Filter4Pipe
     
   ],
   imports: [

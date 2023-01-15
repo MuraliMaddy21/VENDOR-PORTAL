@@ -14,6 +14,7 @@ export class GoodreceiptComponent implements OnInit {
   result:any
   giitems:any
   time:any;
+  filterdata:any="";
 
   constructor(private route:Router,private http:HttpClient) { }
 
