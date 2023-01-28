@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { filter } from 'rxjs';
 
 @Pipe({
   name: 'filter3'
@@ -12,12 +13,13 @@ export class Filter3Pipe implements PipeTransform {
     {
       return value;
     }
-
+     
+    filterString=filterString.toUpperCase();
     const items=[];
 
     for(const entries of value)
     {
-      if(entries['KOART'].includes(filterString))
+      if(entries['KOART'].toUpperCase().includes(filterString))
       {
         items.push(entries);
       }
