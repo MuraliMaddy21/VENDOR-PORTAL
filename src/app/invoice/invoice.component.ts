@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-invoice',
   templateUrl: './invoice.component.html',
@@ -14,6 +16,8 @@ export class InvoiceComponent implements OnInit {
   time:any;
   bukrs:any;
   filterdata:any="";
+  translatedata:any="";
+  items2:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -42,6 +46,13 @@ export class InvoiceComponent implements OnInit {
       console.log(this.items);
     })
   }
+
+  // translate()
+  // {
+
+  //   new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+
+  // }
 
   shutdown()
   {

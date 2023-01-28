@@ -19,6 +19,8 @@ import { Filter1Pipe } from './quotation/filter1.pipe';
 import { Filter2Pipe } from './purord/filter2.pipe';
 import { Filter3Pipe } from './invoice/filter3.pipe';
 import { Filter4Pipe } from './goodreceipt/filter4.pipe';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { Filter4Pipe } from './goodreceipt/filter4.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
