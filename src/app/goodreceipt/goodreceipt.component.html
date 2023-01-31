@@ -53,18 +53,22 @@
             </div>
 
             <div class='dashboard'>
+                <div class="dropdown" style="float:right;">
+                    <div class="dropdown-content">
+                      <button (click)="shutdown()">LOGOUT👋</button>
+                    </div>
+                  </div>
                 <H2 align="center">VENDOR PORTAL- GOODS RECEIPT</H2>
 
                
-                <div class="shutdown">
-                    <button class="log"  (click)="shutdown()">LOGOUT👋</button>
-                </div>
+                
 
                 <div class="time">
                     <mat-card class="matcard">
                         <mat-card-content>TIME:{{time}}</mat-card-content>
                       </mat-card>
                 </div>
+                <br>
                
 
                 <input type="text" class="form-control" placeholder="Filter by Purchase Order Number" [(ngModel)]="filterdata" />
