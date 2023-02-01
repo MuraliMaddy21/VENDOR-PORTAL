@@ -47,13 +47,6 @@ export class InvoiceComponent implements OnInit {
     })
   }
 
-  // translate()
-  // {
-
-  //   new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-
-  // }
-
   shutdown()
   {
     this.http.get('http://localhost:3030/shutdown',{responseType:'json'}).subscribe((data)=>
@@ -62,6 +55,12 @@ export class InvoiceComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+
+  print() {
+    this.http.get('http://localhost:3030/pdf', { responseType: 'json' }).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }

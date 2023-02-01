@@ -324,6 +324,10 @@ table, th, td {
    
   }
 
+  .rightbar table{
+    margin-top: 8px;
+  }
+
 
 
 
