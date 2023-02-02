@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as XLSX from 'xlsx'
 
 
 
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class InvoiceComponent implements OnInit {
 
+  fileName= 'ExcelSheet.xlsx';
   result:any;
   items:any;
   time:any;
@@ -62,6 +64,14 @@ export class InvoiceComponent implements OnInit {
       console.log(data);
     });
   }
+
+
+    exportexcel(): void{  
+       let element = document.getElementById('excel-table');  
+       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);  
+         const wb: XLSX.WorkBook = XLSX.utils.book_new();  XLSX.utils.book_append_sheet(wb, ws, 'Sheet1'); 
+           XLSX.writeFile(wb, this.fileName);}
+  
 
 }
 
