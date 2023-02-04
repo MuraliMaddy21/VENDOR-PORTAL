@@ -72,7 +72,7 @@
                
                
 <br>
-                <input type="text" class="form-control" placeholder="Filter by ACCOUNT TYPE" [(ngModel)]="filterdata" />
+                <input type="text"  class="form-control" placeholder="Filter by ACCOUNT TYPE" [(ngModel)]="filterdata" />
               
 
                 <div class='rightbar'>
@@ -82,13 +82,13 @@
                     <br>
                     <button (click)="exportexcel()">EXPORT TO EXCEL</button>
                     <table id="excel-table">
-                        <th>CLIENT</th>
-                        <th>DOCUMENT NUMBER</th>
-                        <th>COMPANY CODE </th>
-                        <th>FISCAL YEAR </th>
-                        <th>LINE ITEM </th>
-                        <th>AMOUNT </th>
-                        <th>ACCOUNT TYPE </th>
+                        <th>Client</th>
+                        <th>Document Number</th>
+                        <th>Compnay Code</th>
+                        <th>Fiscal Year </th>
+                        <th>Line Item </th>
+                        <th>Amount </th>
+                        <th>Account Type </th>
 
                     <tr style="height:200px" *ngFor="let entries of this.items | filter3:filterdata">
 
