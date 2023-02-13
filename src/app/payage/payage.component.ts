@@ -13,6 +13,7 @@ export class PayageComponent implements OnInit {
   result:any
   time:any;
   filterdata:any="";
+  spinner:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -35,6 +36,9 @@ export class PayageComponent implements OnInit {
 
     this.http.get('http://localhost:3030/pa',{responseType:'json'}).subscribe((data)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       this.result = data
       console.log(this.result)
       this.items=this.result['Envelope']['Body']['ZFM_PAYAGE_MURALI.Response']['I_PAYAGE']['item']
@@ -51,6 +55,12 @@ export class PayageComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 
 }

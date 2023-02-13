@@ -13,6 +13,7 @@ export class PurordComponent implements OnInit {
  result:any
  time:any;
  filterdata:any="";
+ spinner:any;
 
   constructor(private http:HttpClient,private route:Router) { }
 
@@ -33,6 +34,9 @@ export class PurordComponent implements OnInit {
 
     this.http.get('http://localhost:3030/purord',{responseType:'json'}).subscribe((data)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       this.result = data
       this.items = this.result['Envelope']['Body']['ZFM_PURORD_MURALI.Response']['IT_PV']['item']
       console.log(this.items)
@@ -49,6 +53,12 @@ export class PurordComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 
 }

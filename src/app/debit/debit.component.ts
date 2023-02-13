@@ -13,6 +13,7 @@ export class DebitComponent implements OnInit {
   result:any
   vendorid:any="";
   time:any;
+  spinner:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -34,6 +35,9 @@ export class DebitComponent implements OnInit {
 
     this.http.get('http://localhost:3030/credit',{responseType:'json'}).subscribe((data)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       this.result = data
       console.log(this.result)
       this.items=this.result['Envelope']['Body']['ZFM_CREDIT_DEBIT_MEMO_VP_MD.Response']['I_DEBIT']['item']
@@ -49,6 +53,13 @@ export class DebitComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 
 }

@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   telenum:any=""
   result:any
   time:any;
+  spinner:any;
   constructor(private route:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -29,6 +30,9 @@ export class DashboardComponent implements OnInit {
  
     this.http.get("http://localhost:3030/profile",{responseType:'json'}).subscribe((response)=>
     {
+      if (response) {
+        this.hideloader();
+    }
       console.log(response)
       this.result = response
       this.vendorid = this.result['Envelope']['Body']['ZFM_PROFILE_VP_MD.Response']['E_VEN_PROFILE'].VENDOR
@@ -56,6 +60,13 @@ shutdown()
   });
   
   this.route.navigate([""]);
+}
+
+hideloader()
+{
+  this.spinner=document.getElementById('loading');
+  this.spinner .style.display = 'none';
+  
 }
 
 }

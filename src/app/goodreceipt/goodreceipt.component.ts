@@ -15,6 +15,7 @@ export class GoodreceiptComponent implements OnInit {
   giitems:any
   time:any;
   filterdata:any="";
+  spinner:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -24,6 +25,7 @@ export class GoodreceiptComponent implements OnInit {
 
     this.http.get('http://localhost:3030/getauth',{responseType:'json'}).subscribe((data)=>
     {
+    
       this.result = data
       console.log(this.result)
       if(this.result==null)
@@ -36,6 +38,9 @@ export class GoodreceiptComponent implements OnInit {
 
     this.http.get('http://localhost:3030/gr',{responseType:'json'}).subscribe((data)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       this.result = data
       this.items = this.result['Envelope']['Body']['ZFM_GR_MURALI.Response']['IT_GH']['item']
       this.giitems = this.result['Envelope']['Body']['ZFM_GR_MURALI.Response']['IT_GI']['item']
@@ -55,5 +60,11 @@ export class GoodreceiptComponent implements OnInit {
     
     this.route.navigate([""]);
   }
+  hideloader()
+ {
+  this.spinner=document.getElementById('loading');
+  this.spinner.style.display = 'none';
+  
+}
 
 }

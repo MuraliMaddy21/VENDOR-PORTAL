@@ -54,6 +54,7 @@
             </div>
 
             <div class='dashboard'>
+                
                 <div class="dropdown" style="float:right;">
                     <div class="dropdown-content">
                       <button (click)="shutdown()">LOGOUT👋</button>
@@ -80,6 +81,11 @@
 
                 <div class="rightbar">
                     <br>
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border" role="status" >
+                          <span class="sr-only" id="loading"></span>
+                        </div>
+                      </div>
                     
                     <table>
                         <tr>

@@ -21,6 +21,7 @@ export class InvoiceComponent implements OnInit {
   filterdata:any="";
   translatedata:any="";
   items2:any;
+  spinner:any;
 
 
   constructor(private route:Router,private http:HttpClient) { }
@@ -44,6 +45,9 @@ export class InvoiceComponent implements OnInit {
 
     this.http.get('http://localhost:3030/invoice',{responseType:'json'}).subscribe((data)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       this.result = data
       console.log(this.result)
       this.items=this.result['Envelope']['Body']['ZFM_INVOICE_VP_MD.Response']['E_INV_ITEM']['item']
@@ -73,6 +77,13 @@ export class InvoiceComponent implements OnInit {
        const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);  
          const wb: XLSX.WorkBook = XLSX.utils.book_new();  XLSX.utils.book_append_sheet(wb, ws, 'Sheet1'); 
            XLSX.writeFile(wb, this.fileName);}
+
+        hideloader()
+        {
+          this.spinner=document.getElementById('loading');
+          this.spinner .style.display = 'none';
+          
+        }
   
 
 }

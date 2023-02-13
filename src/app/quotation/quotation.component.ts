@@ -14,6 +14,7 @@ export class QuotationComponent implements OnInit {
   result:any;
   time:any;
   filterdata:any="";
+  spinner:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -36,6 +37,9 @@ export class QuotationComponent implements OnInit {
 
     this.http.get('http://localhost:3030/quotation',{responseType:'json'}).subscribe((data)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       this.result = data
       console.log(this.result)
       this.items=this.result['Envelope']['Body']['ZFM_QUOTATION_MURALI.Response']['IT_QUOTATION']['item']
@@ -55,6 +59,12 @@ export class QuotationComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 
 }
