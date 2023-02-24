@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
   result:any=""
   status:any=""
   x:any="";
+  gotp:any="";
+  lotp:any="";
+  json2:any="";
  
 
 
@@ -41,12 +44,16 @@ export class LoginComponent implements OnInit {
   {
     window.alert("Please enter Password")
   }
+  else if(this.gotp=='')
+  {
+    window.alert("Please enter the OTP")
+  }
   else
   {
    
    this.json={
     "vendorid":this.vendorid,
-    "password":this.password
+    "password":this.password,
    }
 
    
@@ -59,7 +66,7 @@ export class LoginComponent implements OnInit {
       console.log(this.result)
       //console.log(this.result['Envelope']['Body']['ZFM_LOGIN_VP_MD.Response']['E_MESSAGE'].toString())
       this.status=this.result['Envelope']['Body']['ZFM_LOGIN_VP_MD.Response']['E_MESSAGE']
-      if(this.status == 'S')
+      if(this.status == 'S' && this.gotp==this.lotp)
       {
          window.alert("Login Successful")
         this.route.navigate(["/dashboard"]);
@@ -88,6 +95,33 @@ export class LoginComponent implements OnInit {
     }
 
   }
+
+  getOtp()
+  {
+    this.lotp = 0;
+    var digits = '0123456789';
+  
+    for(let i=0;i<6;i++)
+    {
+      this.lotp += digits[Math.floor(Math.random()*10)]
+    }
+    console.log(this.lotp);
+    window.alert("OTP SENT SUCCESSFULLY")
+    this.json2=
+    {
+      "otp":this.lotp
+    }
+    this.http.post('http://localhost:3030/otp',this.json2,{responseType:'json'}).subscribe((response)=>
+   {
+      this.result = response
+      console.log(this.result)
+   })
+
+    return this.lotp
+
+  }
+  
+  
 }
 
       
